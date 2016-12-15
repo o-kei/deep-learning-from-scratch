@@ -35,10 +35,11 @@ def predict(network, x):
 x, t = get_data()
 network = init_network()
 
-batch_size = 100 # バッチの数
+batch_size = 1000 # バッチの数
 accuracy_cnt = 0
-
+print(len(x))
 for i in range(0, len(x), batch_size):
+    print(i)
     x_batch = x[i:i+batch_size]
     y_batch = predict(network, x_batch)
     p = np.argmax(y_batch, axis=1)
